@@ -7,4 +7,4 @@ branding:
 
 runs:
   using: 'docker'
-  image: 'ormgair/tg_sender:latest'
+  image: 'docker://ormgair/tg_sender:latest'

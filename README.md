@@ -37,7 +37,7 @@ This is GitHub Action to send messages or files to Telegram using official
        name: A job to post data in tg
        steps:
          - name: Send data
-           uses: actions/tg-sender-action@v2
+           uses: BorisTestov/tg_sender_action@latest
            env:
              TG_SENDER_TG_CHAT_ID: ${{ secrets.TG_SENDER_TG_CHAT_ID }}
              TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TG_SENDER_TG_BOT_TOKEN }}
@@ -53,7 +53,7 @@ This is GitHub Action to send messages or files to Telegram using official
        name: A job to post data in tg
        steps:
          - name: Send data
-           uses: actions/tg-sender-action@v2
+           uses: BorisTestov/tg_sender_action@latest
            env:
              TG_SENDER_TG_CHAT_ID: ${{ secrets.TG_SENDER_TG_CHAT_ID }}
              TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TG_SENDER_TG_BOT_TOKEN }}
@@ -69,7 +69,7 @@ This is GitHub Action to send messages or files to Telegram using official
        name: A job to post data in tg
        steps:
          - name: Send data
-           uses: actions/tg-sender-action@v2
+           uses: BorisTestov/tg_sender_action@latest
            env:
              TG_SENDER_TG_CHAT_ID: ${{ secrets.TG_SENDER_TG_CHAT_ID }}
              TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TG_SENDER_TG_BOT_TOKEN }}
@@ -86,7 +86,7 @@ This is GitHub Action to send messages or files to Telegram using official
        name: A job to post data in tg
        steps:
          - name: Send data
-           uses: actions/tg-sender-action@v2
+           uses: BorisTestov/tg_sender_action@latest
            env:
              TG_SENDER_TG_CHAT_ID: ${{ secrets.TG_SENDER_TG_CHAT_ID }}
              TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TG_SENDER_TG_BOT_TOKEN }}
