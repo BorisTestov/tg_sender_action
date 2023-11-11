@@ -1,0 +1,22 @@
+name: Test pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint
+        run: |
+          pip install flake8
+          flake8 --append-config ./.flake.cfg .

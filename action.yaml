@@ -1,0 +1,6 @@
+name: 'CI Telegram Sender'
+description: 'Send message and files to tg chat via bot'
+
+runs:
+  using: 'docker'
+  image: 'ormgair/tg_sender:latest'
