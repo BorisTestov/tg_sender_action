@@ -1,9 +1,9 @@
-import html
 import os
 from http import HTTPStatus
 
 import requests
 
+from config.payload import payload_settings
 from config.telegram import telegram_settings
 from logger.logger import get_logger
 
@@ -13,13 +13,18 @@ logger = get_logger(__name__)
 class TelegramService:
     def __init__(self):
         self.chat_id = telegram_settings.chat_id
+        self.parse_mode = (
+            None
+            if not payload_settings.parse_mode
+            else payload_settings.parse_mode.value
+        )
         self.base_url = f"https://api.telegram.org/bot{telegram_settings.bot_token}"
 
     def send_message(self, message: str) -> None:
         payload = {
             "chat_id": self.chat_id,
-            "text": html.escape(message),
-            "parse_mode": "HTML",
+            "text": message,
+            "parse_mode": self.parse_mode,
         }
         response = requests.post(self.base_url + "/sendMessage", data=payload)
         if response.status_code != HTTPStatus.OK:
@@ -40,7 +45,7 @@ class TelegramService:
             return
         payload = {
             "chat_id": self.chat_id,
-            "parse_mode": "HTML",
+            "parse_mode": self.parse_mode,
         }
         if caption is not None:
             payload["caption"] = caption

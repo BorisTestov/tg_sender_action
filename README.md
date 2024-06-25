@@ -42,6 +42,7 @@ This is GitHub Action to send messages or files to Telegram using official
              TG_SENDER_TG_CHAT_ID: ${{ secrets.TG_SENDER_TG_CHAT_ID }}
              TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TG_SENDER_TG_BOT_TOKEN }}
              TG_SENDER_PAYLOAD_MESSAGE: "Hello World!"
+             TG_SENDER_PAYLOAD_PARSE_MODE: "HTML"
    ```
 2. **Send file**
    ```yaml
@@ -99,6 +100,8 @@ This is GitHub Action to send messages or files to Telegram using official
   <br><br>
 - `TG_SENDER_PAYLOAD_FILE_PATH` - Path to file to send. Optional.
 - `TG_SENDER_PAYLOAD_MESSAGE` - Message to send. Optional.
+- `TG_SENDER_PAYLOAD_PARSE_MODE` - Parse mode for message. Can be one of (`HTML`, `MARKDOWN`, `MARKDOWNV2`). If not set
+  or set to incorrect value, no parse mode will be used (plain text will be sent)
   <br><br>
 - `TG_SENDER_LOG_LEVEL` - Log level. Optional. Default is `INFO`.
 - `TG_SENDER_LOG_FORMAT` - Message format. Optional. Default
